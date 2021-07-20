@@ -23,19 +23,19 @@ public class HelloServer {
             
             PrintWriter author = new PrintWriter(socket.getOutputStream());
             
-//            if (reader.hasNextLine()) {
-//                String header = reader.nextLine();
-//                if (header.split(" ")[1].equals("/quit")) {
-//                    
-//                    author.print("HTTP/1.1 202 Accepted\r\n");
-//                    author.print("\r\n");
-//                    
-//                    System.out.println("Closing the server");
-//                    
-//                    closeConnection(author, reader, socket);
-//                    break;
-//                }
-//            }
+            if (reader.hasNextLine()) {
+                String header = reader.nextLine();
+                if (header.split(" ")[1].equals("/quit")) {
+                    
+                    author.print("HTTP/1.1 202 Accepted\r\n");
+                    author.print("\r\n");
+                    
+                    System.out.println("Closing the server");
+                    
+                    closeConnection(author, reader, socket);
+                    break;
+                }
+            }
             
             System.out.println("There's a new connection!");
             
